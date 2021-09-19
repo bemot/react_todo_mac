@@ -38,7 +38,7 @@ export const deleteTodo = (id) => async (dispatch) => {
     type: DELETE_TODO,
     payload: id,
   });
-  history.push("/");
+  history.push("/todos");
 };
 
 // EDIT TODO
@@ -48,5 +48,5 @@ export const editTodo = (id, formValues) => async (dispatch) => {
     type: EDIT_TODO,
     payload: res.data,
   });
-  history.push("/");
+  history.push("/todos");
 };

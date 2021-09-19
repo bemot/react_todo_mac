@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Modal from '../layout/Modal';
-import history from '../../history';
-import { getTodo, deleteTodo } from '../../actions/todos';
+import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import Modal from "../layout/Modal";
+import history from "../../history";
+import { getTodo, deleteTodo } from "../../actions/todos";
 
 class TodoDelete extends Component {
   componentDidMount() {
@@ -12,7 +12,7 @@ class TodoDelete extends Component {
 
   renderContent() {
     if (!this.props.todo) {
-      return 'Are you sure you want to delete this task?';
+      return "Are you sure you want to delete this task?";
     }
     return `Are you sure you want to delete the task: ${this.props.todo.task}`;
   }
@@ -23,11 +23,11 @@ class TodoDelete extends Component {
       <Fragment>
         <button
           onClick={() => this.props.deleteTodo(id)}
-          className='ui negative button'
+          className="ui negative button"
         >
           Delete
         </button>
-        <Link to='/' className='ui button'>
+        <Link to="/todos" className="ui button">
           Cancel
         </Link>
       </Fragment>
@@ -37,20 +37,17 @@ class TodoDelete extends Component {
   render() {
     return (
       <Modal
-        title='Delete Todo'
+        title="Delete Todo"
         content={this.renderContent()}
         actions={this.renderActions()}
-        onDismiss={() => history.push('/')}
+        onDismiss={() => history.push("/todos")}
       />
     );
   }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  todo: state.todos[ownProps.match.params.id]
+  todo: state.todos[ownProps.match.params.id],
 });
 
-export default connect(
-  mapStateToProps,
-  { getTodo, deleteTodo }
-)(TodoDelete);
+export default connect(mapStateToProps, { getTodo, deleteTodo })(TodoDelete);

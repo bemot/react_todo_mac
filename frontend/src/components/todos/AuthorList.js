@@ -15,7 +15,7 @@ class AuthorList extends Component {
           <div className="item" key={author.id}>
             <div className="right floated content">
               <Link
-                to={`/delete/${author.id}`}
+                to={`/authors/delete/${author.id}`}
                 className="small ui negative basic button"
               >
                 Delete
@@ -23,7 +23,7 @@ class AuthorList extends Component {
             </div>
             <i className="large calendar outline middle aligned icon" />
             <div className="content">
-              <Link to={`/edit/${author.id}`} className="header">
+              <Link to={`/authors/edit/${author.id}`} className="header">
                 {author.author}
               </Link>
             </div>

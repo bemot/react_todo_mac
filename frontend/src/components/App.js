@@ -8,6 +8,7 @@ import DashboardAuthors from "./todos/DashboardAuthors";
 import DashboardTodos from "./todos/DashboardTodos";
 import TodoDelete from "./todos/TodoDelete";
 import TodoEdit from "./todos/TodoEdit";
+import MainPage from "./todos/MainPage";
 
 import AuthorDelete from "./todos/AuthorDelete";
 import AuthorEdit from "./todos/AuthorEdit";
@@ -22,9 +23,13 @@ class App extends Component {
         <Router history={history}>
           <Header />
           <Switch>
-            <Route exact path="/" component={DashboardTodos} />
-            <Route exact path="/delete/:id" component={TodoDelete} />
-            <Route exact path="/edit/:id" component={TodoEdit} />
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/todos" component={DashboardTodos} />
+            <Route exact path="/todos/delete/:id" component={TodoDelete} />
+            <Route exact path="/todos/edit/:id" component={TodoEdit} />
+            <Route exact path="/authors" component={DashboardAuthors} />
+            <Route exact path="/authors/delete/:id" component={AuthorDelete} />
+            <Route exact path="/authors/edit/:id" component={AuthorEdit} />
           </Switch>
         </Router>
       </Provider>

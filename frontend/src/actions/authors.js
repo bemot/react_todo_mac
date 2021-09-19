@@ -25,7 +25,7 @@ export const deleteAuthor = (id) => async (dispatch) => {
     type: DELETE_AUTHOR,
     payload: id,
   });
-  history.push("/");
+  history.push("/authors");
 };
 
 // authors
@@ -55,5 +55,5 @@ export const editAuthor = (id, formValues) => async (dispatch) => {
     type: EDIT_AUTHOR,
     payload: res.data,
   });
-  history.push("/");
+  history.push("/authors");
 };

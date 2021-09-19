@@ -27,7 +27,7 @@ class AuthorDelete extends Component {
         >
           Delete
         </button>
-        <Link to="/" className="ui button">
+        <Link to="/authors" className="ui button">
           Cancel
         </Link>
       </Fragment>
@@ -40,7 +40,7 @@ class AuthorDelete extends Component {
         title="Delete Author"
         content={this.renderContent()}
         actions={this.renderActions()}
-        onDismiss={() => history.push("/")}
+        onDismiss={() => history.push("/authors")}
       />
     );
   }

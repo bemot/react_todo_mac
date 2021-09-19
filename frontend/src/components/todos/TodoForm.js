@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 class TodoForm extends Component {
   renderField = ({ input, label, meta: { touched, error } }) => {
+    //console.log(input);
     return (
       <div className={`field ${touched && error ? "error" : ""}`}>
         <label>{label}</label>
